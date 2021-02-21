@@ -228,6 +228,66 @@ function queCounter(index) {
     "</p> Questions</span>";
   bottom_ques_counter.innerHTML = totalQueCounTag;
 }
+
+//array to store values
+var stores = Array();
+//input field text
+var inputField = document.getElementById("inputString");
+
+//clear the storage
+function clearStorage() {
+  //clear the storage
+  stores = Array();
+  localStorage.clear("database");
+  //visually cleared
+  document.getElementById("write").innerHTML = "storage cleared.";
+}
+
+// save the string
+function saveStatusLocally() {
+  //grab the value of the text box
+  var stringToSave = inputField.value;
+  if (stringToSave == null || stringToSave == "") {
+    document.getElementById("write").innerHTML = "nothing to store.";
+  } else {
+    //push that value to the array
+    stores.push(stringToSave);
+    //clear the input field for visual
+    inputField.value = "";
+    //print that value into the local storage named database and joing by a non-breaking space
+    window.localStorage.setItem("database", stores.join(" "));
+    //confirm write
+    document.getElementById("write").innerHTML = "data stored.";
+    //clear message after 1s
+    setTimeout(function () {
+      document.getElementById("write").innerHTML = "";
+    }, 1000);
+  }
+
+  let retrievedObject = JSON.parse(window.localStorage.getItem(".score_text"));
+
+  if (!retrievedObject) {
+    alert("saved");
+    retrievedObject = [];
+  }
+
+  retrievedObject.push(".score_text" + retrievedObject.length);
+  window.localStorage.setItem(".score_text", JSON.stringify(retrievedObject));
+}
+
+// read the string
+function readStatus() {
+  //print the value of the local storage "database" key
+  if (window.localStorage.getItem("database") == null) {
+    document.getElementById("write").innerHTML = "nothing stored.";
+  } else {
+    document.getElementById("write").innerHTML =
+      window.localStorage.getItem("database") +
+      "<br>quiz:" +
+      window.localStorage.getItem("finalScore");
+  }
+}
+
 let questions = [
   {
     numb: 1,
@@ -284,4 +344,8 @@ let questions = [
       "eXamine Multiple Language",
     ],
   },
+
+
+
+
 ];
