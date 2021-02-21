@@ -1,6 +1,5 @@
 I was advised to create a code quiz with the following criteria shown below. I created an interactive experience for the user with a clean and polished look. I used color and design as a means of communication whether the answer was correct or incorrect to demonstrate a full immersive experience.
 
-
 User Story
 
 ```
@@ -24,4 +23,6 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and my score
 
-The url for deployment is 
+The url for deployment is https://crissykay.github.io/Code_Quiz/
+
+Screenshots labeled p1-p4 are in a Photos Folder of the CODE_QUIZ repo.
