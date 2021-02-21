@@ -54,6 +54,8 @@ restart_quiz.onclick = () => {
   timeText.textContent = "Time Left";
   next_btn.classList.remove("show");
 };
+clearInterval(counter);
+clearInterval(counterLine);
 
 quit_quiz.onclick = () => {
   window.location.reload();
