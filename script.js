@@ -230,14 +230,14 @@ function queCounter(index) {
 }
 
 //array to store values
-var stores = Array();
+var stores = ["First Score", "Second Score", "Third Score"];
 //input field text
 var inputField = document.getElementById("inputString");
 
 //clear the storage
 function clearStorage() {
   //clear the storage
-  stores = Array();
+  stores = ["First Score", "Second Score", "Third Score"];
   localStorage.clear("database");
   //visually cleared
   document.getElementById("write").innerHTML = "storage cleared.";
@@ -255,12 +255,12 @@ function saveStatusLocally() {
     //clear the input field for visual
     inputField.value = "";
     //print that value into the local storage named database and joing by a non-breaking space
-    window.localStorage.setItem("database", stores.join(" "));
+    window.localStorage.setItem("database", stores.join(""));
     //confirm write
     document.getElementById("write").innerHTML = "data stored.";
     //clear message after 1s
     setTimeout(function () {
-      document.getElementById("write").innerHTML = "";
+      document.getElementById("write").innerHTML = "userScore";
     }, 1000);
   }
 
@@ -291,14 +291,9 @@ function readStatus() {
 let questions = [
   {
     numb: 1,
-    question: "What does HTML stand for?",
-    answer: "Hyper Text Markup Language",
-    options: [
-      "Hyper Text Preprocessor",
-      "Hyper Text Markup Language",
-      "Hyper Text Multiple Language",
-      "Hyper Tool Multi Language",
-    ],
+    question: "What is the language of the World Wide Web?",
+    answer: "HTML",
+    options: ["Binary Code", "LINUX", "HTML", "CSS"],
   },
   {
     numb: 2,
@@ -313,39 +308,76 @@ let questions = [
   },
   {
     numb: 3,
-    question: "What does PHP stand for?",
-    answer: "Hypertext Preprocessor",
+    question: "Who is making the Web standards?",
+    answer: "The World Wide Web Consortium",
     options: [
-      "Hypertext Preprocessor",
-      "Hypertext Programming",
-      "Hypertext Preprogramming",
-      "Hometext Preprocessor",
+      "Microsoft",
+      "Mozilla",
+      "The World Wide Web Consortium",
+      "Google",
     ],
   },
   {
     numb: 4,
-    question: "What does SQL stand for?",
-    answer: "Structured Query Language",
-    options: [
-      "Stylish Question Language",
-      "Stylesheet Query Language",
-      "Statement Question Language",
-      "Structured Query Language",
-    ],
+    question:
+      "In HTML, which attribute is used to specify that an input field must be filled out?",
+    answer: "required",
+    options: ["validate", "required", "formvalidate", "placeholder"],
   },
   {
     numb: 5,
-    question: "What does XML stand for?",
-    answer: "eXtensible Markup Language",
+    question: "How do you create a function in JavaScript?",
+    answer: "function myFunction()",
     options: [
-      "eXtensible Markup Language",
-      "eXecutable Multiple Language",
-      "eXTra Multi-Program Language",
-      "eXamine Multiple Language",
+      "function myFunction()",
+      "function = myfunction()",
+      "function:myFunction()",
+      "function (myFunction)",
     ],
   },
-
-
-
-
+  {
+    numb: 6,
+    question: "How to write an IF statement in JavaScript?",
+    answer: "if (i == 5)  ",
+    options: ["if i = 5 then", "if (i == 5)", "if i = 5", "if i == 5 then"],
+  },
+  {
+    numb: 7,
+    question: "How do you insert a comment in a CSS file?",
+    answer: "/* this is a comment */",
+    options: [
+      "// this is a comment //",
+      "// this is a comment",
+      "' this is a comment",
+      "/* this is a comment */  ",
+    ],
+  },
+  {
+    numb: 8,
+    question: "What does HTML stand for?",
+    answer: "Hyper Text Markup Language",
+    options: [
+      "Hyper Text Preprocessor",
+      "Hyper Text Markup Language",
+      "Hyper Text Multiple Language",
+      "Hyper Tool Multi Language",
+    ],
+  },
+  {
+    numb: 9,
+    question: "Which CSS property controls the text size?",
+    answer: "font-size",
+    options: ["font-size", "text-size", "font-style", "text-style"],
+  },
+  {
+    numb: 10,
+    question: "Which is the correct CSS syntax?",
+    answer: "body {color: black;}",
+    options: [
+      "body {color: black;}",
+      "{body:color=black;}",
+      "{body;color:black;}",
+      "body:color=black;",
+    ],
+  },
 ];
